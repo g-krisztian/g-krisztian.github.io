@@ -2,7 +2,6 @@
 goog.provide('pomodoro.history');
 goog.require('cljs.core');
 goog.require('cljs.core.constants');
-goog.require('reagent.cookies');
 goog.require('pomodoro.ui_common');
 goog.require('pomodoro.time_format');
 goog.require('pomodoro.action');

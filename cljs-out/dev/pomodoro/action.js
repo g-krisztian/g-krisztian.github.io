@@ -66,8 +66,9 @@ return pomodoro.action.start_button_on_click(state);
 pomodoro.action.reset_task = (function pomodoro$action$reset_task(state){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$paused,true,cljs.core.cst$kw$active,false,cljs.core.cst$kw$stop,true,cljs.core.cst$kw$resume,true,cljs.core.cst$kw$elapsed,(0)], null));
 });
-pomodoro.action.get_real_duration = (function pomodoro$action$get_real_duration(state,now){
+pomodoro.action.get_real_duration = (function pomodoro$action$get_real_duration(state){
 var start = cljs.core.cst$kw$start_DASH_time.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));
+var now = cljs.core.cst$kw$now.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));
 var real_duration = (now - start);
 var paused_duration = (cljs.core.cst$kw$paused_DASH_time.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)) - start);
 if(cljs.core.truth_(cljs.core.cst$kw$paused.cljs$core$IFn$_invoke$arity$2(cljs.core.deref(state),false))){
@@ -76,11 +77,11 @@ return paused_duration;
 return real_duration;
 }
 });
-pomodoro.action.add_to_history = (function pomodoro$action$add_to_history(state,now){
-return pomodoro.cookie_storage.set_history(cljs.core.conj.cljs$core$IFn$_invoke$arity$2(pomodoro.cookie_storage.get_history(),new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$task_DASH_name,cljs.core.cst$kw$task_DASH_name.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$length,cljs.core.cst$kw$length_DASH_in_DASH_seconds.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$start,cljs.core.cst$kw$start_DASH_time.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$key,["history_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$key.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))].join(''),cljs.core.cst$kw$duration,pomodoro.action.get_real_duration(state,now)], null)));
+pomodoro.action.add_to_history = (function pomodoro$action$add_to_history(state){
+return pomodoro.cookie_storage.set_history(cljs.core.conj.cljs$core$IFn$_invoke$arity$2(pomodoro.cookie_storage.get_history(),new cljs.core.PersistentArrayMap(null, 5, [cljs.core.cst$kw$task_DASH_name,cljs.core.cst$kw$task_DASH_name.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$length,cljs.core.cst$kw$length_DASH_in_DASH_seconds.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$start,cljs.core.cst$kw$start_DASH_time.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)),cljs.core.cst$kw$key,["history_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$key.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))].join(''),cljs.core.cst$kw$duration,pomodoro.action.get_real_duration(state)], null)));
 });
 pomodoro.action.stop_button_on_click = (function pomodoro$action$stop_button_on_click(state){
-pomodoro.action.add_to_history(state,(new Date()).getTime());
+pomodoro.action.add_to_history(state);
 
 return pomodoro.action.reset_task(state);
 });

@@ -3,7 +3,6 @@ goog.provide('pomodoro.core');
 goog.require('cljs.core');
 goog.require('cljs.core.constants');
 goog.require('reagent.dom');
-goog.require('reagent_modals.modals');
 goog.require('pomodoro.action');
 goog.require('pomodoro.ui_common');
 goog.require('pomodoro.summary');
@@ -29,23 +28,23 @@ pomodoro.core.swap_view = (function pomodoro$core$swap_view(state,view){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$view,view], null));
 });
 pomodoro.core.show_view = (function pomodoro$core$show_view(state){
-var pred__15080 = cljs.core._EQ_;
-var expr__15081 = cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));
-if(cljs.core.truth_((function (){var G__15083 = cljs.core.cst$kw$summary;
-var G__15084 = expr__15081;
-return (pred__15080.cljs$core$IFn$_invoke$arity$2 ? pred__15080.cljs$core$IFn$_invoke$arity$2(G__15083,G__15084) : pred__15080.call(null,G__15083,G__15084));
+var pred__15065 = cljs.core._EQ_;
+var expr__15066 = cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));
+if(cljs.core.truth_((function (){var G__15068 = cljs.core.cst$kw$summary;
+var G__15069 = expr__15066;
+return (pred__15065.cljs$core$IFn$_invoke$arity$2 ? pred__15065.cljs$core$IFn$_invoke$arity$2(G__15068,G__15069) : pred__15065.call(null,G__15068,G__15069));
 })())){
 return pomodoro.summary.summary(state);
 } else {
-if(cljs.core.truth_((function (){var G__15085 = cljs.core.cst$kw$history;
-var G__15086 = expr__15081;
-return (pred__15080.cljs$core$IFn$_invoke$arity$2 ? pred__15080.cljs$core$IFn$_invoke$arity$2(G__15085,G__15086) : pred__15080.call(null,G__15085,G__15086));
+if(cljs.core.truth_((function (){var G__15070 = cljs.core.cst$kw$history;
+var G__15071 = expr__15066;
+return (pred__15065.cljs$core$IFn$_invoke$arity$2 ? pred__15065.cljs$core$IFn$_invoke$arity$2(G__15070,G__15071) : pred__15065.call(null,G__15070,G__15071));
 })())){
 return pomodoro.history.history_table(state);
 } else {
-if(cljs.core.truth_((function (){var G__15087 = cljs.core.cst$kw$planning;
-var G__15088 = expr__15081;
-return (pred__15080.cljs$core$IFn$_invoke$arity$2 ? pred__15080.cljs$core$IFn$_invoke$arity$2(G__15087,G__15088) : pred__15080.call(null,G__15087,G__15088));
+if(cljs.core.truth_((function (){var G__15072 = cljs.core.cst$kw$planning;
+var G__15073 = expr__15066;
+return (pred__15065.cljs$core$IFn$_invoke$arity$2 ? pred__15065.cljs$core$IFn$_invoke$arity$2(G__15072,G__15073) : pred__15065.call(null,G__15072,G__15073));
 })())){
 return pomodoro.batch.planning(state);
 } else {
@@ -57,33 +56,33 @@ return pomodoro.single_run.single_run(state);
 pomodoro.core.choose_view = (function pomodoro$core$choose_view(state){
 var views = new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$single_DASH_run,cljs.core.cst$kw$planning,cljs.core.cst$kw$history,cljs.core.cst$kw$summary], null);
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,cljs.core.into.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$class,"btn-group"], null)], null),(function (){var iter__4523__auto__ = ((function (views){
-return (function pomodoro$core$choose_view_$_iter__15089(s__15090){
+return (function pomodoro$core$choose_view_$_iter__15074(s__15075){
 return (new cljs.core.LazySeq(null,((function (views){
 return (function (){
-var s__15090__$1 = s__15090;
+var s__15075__$1 = s__15075;
 while(true){
-var temp__5720__auto__ = cljs.core.seq(s__15090__$1);
+var temp__5720__auto__ = cljs.core.seq(s__15075__$1);
 if(temp__5720__auto__){
-var s__15090__$2 = temp__5720__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__15090__$2)){
-var c__4521__auto__ = cljs.core.chunk_first(s__15090__$2);
+var s__15075__$2 = temp__5720__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__15075__$2)){
+var c__4521__auto__ = cljs.core.chunk_first(s__15075__$2);
 var size__4522__auto__ = cljs.core.count(c__4521__auto__);
-var b__15092 = cljs.core.chunk_buffer(size__4522__auto__);
-if((function (){var i__15091 = (0);
+var b__15077 = cljs.core.chunk_buffer(size__4522__auto__);
+if((function (){var i__15076 = (0);
 while(true){
-if((i__15091 < size__4522__auto__)){
-var view = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4521__auto__,i__15091);
-cljs.core.chunk_append(b__15092,pomodoro.ui_common.button_element((function (){var G__15094 = cljs.core.cst$kw$active;
-var fexpr__15093 = cljs.core.deref(state);
-return (fexpr__15093.cljs$core$IFn$_invoke$arity$1 ? fexpr__15093.cljs$core$IFn$_invoke$arity$1(G__15094) : fexpr__15093.call(null,G__15094));
-})(),(pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1 ? pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1(view) : pomodoro.core.dictionary.call(null,view)),((function (i__15091,view,c__4521__auto__,size__4522__auto__,b__15092,s__15090__$2,temp__5720__auto__,views){
+if((i__15076 < size__4522__auto__)){
+var view = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4521__auto__,i__15076);
+cljs.core.chunk_append(b__15077,pomodoro.ui_common.button_element((function (){var G__15079 = cljs.core.cst$kw$active;
+var fexpr__15078 = cljs.core.deref(state);
+return (fexpr__15078.cljs$core$IFn$_invoke$arity$1 ? fexpr__15078.cljs$core$IFn$_invoke$arity$1(G__15079) : fexpr__15078.call(null,G__15079));
+})(),(pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1 ? pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1(view) : pomodoro.core.dictionary.call(null,view)),((function (i__15076,view,c__4521__auto__,size__4522__auto__,b__15077,s__15075__$2,temp__5720__auto__,views){
 return (function (){
 return pomodoro.core.swap_view(state,view);
-});})(i__15091,view,c__4521__auto__,size__4522__auto__,b__15092,s__15090__$2,temp__5720__auto__,views))
+});})(i__15076,view,c__4521__auto__,size__4522__auto__,b__15077,s__15075__$2,temp__5720__auto__,views))
 ));
 
-var G__15097 = (i__15091 + (1));
-i__15091 = G__15097;
+var G__15082 = (i__15076 + (1));
+i__15076 = G__15082;
 continue;
 } else {
 return true;
@@ -91,20 +90,20 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__15092),pomodoro$core$choose_view_$_iter__15089(cljs.core.chunk_rest(s__15090__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__15077),pomodoro$core$choose_view_$_iter__15074(cljs.core.chunk_rest(s__15075__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__15092),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__15077),null);
 }
 } else {
-var view = cljs.core.first(s__15090__$2);
-return cljs.core.cons(pomodoro.ui_common.button_element((function (){var G__15096 = cljs.core.cst$kw$active;
-var fexpr__15095 = cljs.core.deref(state);
-return (fexpr__15095.cljs$core$IFn$_invoke$arity$1 ? fexpr__15095.cljs$core$IFn$_invoke$arity$1(G__15096) : fexpr__15095.call(null,G__15096));
-})(),(pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1 ? pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1(view) : pomodoro.core.dictionary.call(null,view)),((function (view,s__15090__$2,temp__5720__auto__,views){
+var view = cljs.core.first(s__15075__$2);
+return cljs.core.cons(pomodoro.ui_common.button_element((function (){var G__15081 = cljs.core.cst$kw$active;
+var fexpr__15080 = cljs.core.deref(state);
+return (fexpr__15080.cljs$core$IFn$_invoke$arity$1 ? fexpr__15080.cljs$core$IFn$_invoke$arity$1(G__15081) : fexpr__15080.call(null,G__15081));
+})(),(pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1 ? pomodoro.core.dictionary.cljs$core$IFn$_invoke$arity$1(view) : pomodoro.core.dictionary.call(null,view)),((function (view,s__15075__$2,temp__5720__auto__,views){
 return (function (){
 return pomodoro.core.swap_view(state,view);
-});})(view,s__15090__$2,temp__5720__auto__,views))
-),pomodoro$core$choose_view_$_iter__15089(cljs.core.rest(s__15090__$2)));
+});})(view,s__15075__$2,temp__5720__auto__,views))
+),pomodoro$core$choose_view_$_iter__15074(cljs.core.rest(s__15075__$2)));
 }
 } else {
 return null;
@@ -141,13 +140,13 @@ return pomodoro.core.main_loop(pomodoro.core.app_state);
 }),(1000));
 }
 pomodoro.core.set_title = (function pomodoro$core$set_title(){
-return document.title = ["Pompdoro - ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var fexpr__15099 = cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state));
-return (fexpr__15099.cljs$core$IFn$_invoke$arity$1 ? fexpr__15099.cljs$core$IFn$_invoke$arity$1(pomodoro.core.dictionary) : fexpr__15099.call(null,pomodoro.core.dictionary));
+return document.title = ["Pompdoro - ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var fexpr__15084 = cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state));
+return (fexpr__15084.cljs$core$IFn$_invoke$arity$1 ? fexpr__15084.cljs$core$IFn$_invoke$arity$1(pomodoro.core.dictionary) : fexpr__15084.call(null,pomodoro.core.dictionary));
 })())," ",(cljs.core.truth_(cljs.core.cst$kw$active.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state)))?["| ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$task_DASH_name.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state))),": ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.time_format.render_time(((1000) * cljs.core.cst$kw$elapsed.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state)))))].join(''):null)].join('');
 });
 pomodoro.core.applet = (function pomodoro$core$applet(){
 pomodoro.core.set_title();
 
-return new cljs.core.PersistentVector(null, 8, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_app,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$margin,"auto",cljs.core.cst$kw$width,"max-content"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h1,"Pomodoro app"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h3,["Time: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.time_format.render_time(pomodoro.time_format.correct_time(cljs.core.cst$kw$now.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state)))))].join('')], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,cljs.core.deref(pomodoro.cookie_storage.source)], null),pomodoro.core.choose_view(pomodoro.core.app_state),pomodoro.core.show_view(pomodoro.core.app_state),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [reagent_modals.modals.modal_window], null)], null);
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_app,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$style,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$margin,"auto",cljs.core.cst$kw$width,"max-content"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h1,"Pomodoro app"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h3,["Time: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.time_format.render_time(pomodoro.time_format.correct_time(cljs.core.cst$kw$now.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(pomodoro.core.app_state)))))].join('')], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,cljs.core.deref(pomodoro.cookie_storage.source)], null),pomodoro.core.choose_view(pomodoro.core.app_state),pomodoro.core.show_view(pomodoro.core.app_state)], null);
 });
 reagent.dom.render.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [pomodoro.core.applet], null),document.getElementById("app"));
