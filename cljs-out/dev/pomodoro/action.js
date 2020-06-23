@@ -4,6 +4,7 @@ goog.require('cljs.core');
 goog.require('cljs.core.constants');
 goog.require('pomodoro.audio');
 goog.require('pomodoro.cookie_storage');
+goog.require('pomodoro.time_format');
 pomodoro.action.get_task_in_seconds = (function pomodoro$action$get_task_in_seconds(task){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$unit.cljs$core$IFn$_invoke$arity$1(task),cljs.core.cst$kw$min)){
 return ((60) * cljs.core.cst$kw$length.cljs$core$IFn$_invoke$arity$1(task));
@@ -13,11 +14,11 @@ return cljs.core.cst$kw$length.cljs$core$IFn$_invoke$arity$1(task);
 });
 pomodoro.action.new_plan = (function pomodoro$action$new_plan(state){
 var task = cljs.core.select_keys(cljs.core.deref(state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$task_DASH_name,cljs.core.cst$kw$length,cljs.core.cst$kw$unit], null));
-return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([task,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$key,["plan_",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var fexpr__14943 = (function (){var G__14945 = cljs.core.cst$kw$get_DASH_key;
-var fexpr__14944 = cljs.core.deref(state);
-return (fexpr__14944.cljs$core$IFn$_invoke$arity$1 ? fexpr__14944.cljs$core$IFn$_invoke$arity$1(G__14945) : fexpr__14944.call(null,G__14945));
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([task,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$key,["plan_",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var fexpr__14877 = (function (){var G__14879 = cljs.core.cst$kw$get_DASH_key;
+var fexpr__14878 = cljs.core.deref(state);
+return (fexpr__14878.cljs$core$IFn$_invoke$arity$1 ? fexpr__14878.cljs$core$IFn$_invoke$arity$1(G__14879) : fexpr__14878.call(null,G__14879));
 })();
-return (fexpr__14943.cljs$core$IFn$_invoke$arity$0 ? fexpr__14943.cljs$core$IFn$_invoke$arity$0() : fexpr__14943.call(null));
+return (fexpr__14877.cljs$core$IFn$_invoke$arity$0 ? fexpr__14877.cljs$core$IFn$_invoke$arity$0() : fexpr__14877.call(null));
 })())].join(''),cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(task)], null)], 0));
 });
 pomodoro.action.swap_value = (function pomodoro$action$swap_value(state,key,e){
@@ -29,11 +30,11 @@ pomodoro.cookie_storage.set_unit(m);
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$unit,m], null));
 });
 pomodoro.action.start_button_on_click = (function pomodoro$action$start_button_on_click(state){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 7, [cljs.core.cst$kw$start_DASH_time,(new Date()).getTime(),cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$paused,false,cljs.core.cst$kw$active,true,cljs.core.cst$kw$stop,false,cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(cljs.core.deref(state)),cljs.core.cst$kw$key,(function (){var fexpr__14948 = (function (){var G__14950 = cljs.core.cst$kw$get_DASH_key;
-var fexpr__14949 = cljs.core.deref(state);
-return (fexpr__14949.cljs$core$IFn$_invoke$arity$1 ? fexpr__14949.cljs$core$IFn$_invoke$arity$1(G__14950) : fexpr__14949.call(null,G__14950));
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$start_DASH_time,(new Date()).getTime(),cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$paused,false,cljs.core.cst$kw$resume,true,cljs.core.cst$kw$active,true,cljs.core.cst$kw$stop,false,cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(cljs.core.deref(state)),cljs.core.cst$kw$key,(function (){var fexpr__14882 = (function (){var G__14884 = cljs.core.cst$kw$get_DASH_key;
+var fexpr__14883 = cljs.core.deref(state);
+return (fexpr__14883.cljs$core$IFn$_invoke$arity$1 ? fexpr__14883.cljs$core$IFn$_invoke$arity$1(G__14884) : fexpr__14883.call(null,G__14884));
 })();
-return (fexpr__14948.cljs$core$IFn$_invoke$arity$0 ? fexpr__14948.cljs$core$IFn$_invoke$arity$0() : fexpr__14948.call(null));
+return (fexpr__14882.cljs$core$IFn$_invoke$arity$0 ? fexpr__14882.cljs$core$IFn$_invoke$arity$0() : fexpr__14882.call(null));
 })()], null));
 });
 pomodoro.action.run_plan = (function pomodoro$action$run_plan(state){
@@ -109,4 +110,10 @@ return null;
 } else {
 return pomodoro.action.run_plan(state);
 }
+});
+pomodoro.action.dict = (function pomodoro$action$dict(state,k){
+return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(cljs.core.deref(state),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$dictionary,k], null));
+});
+pomodoro.action.set_title = (function pomodoro$action$set_title(state){
+return document.title = ["Pompdoro - ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.action.dict(state,cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state))))," ",(cljs.core.truth_(cljs.core.cst$kw$active.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))?["| ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$task_DASH_name.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state))),": ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.time_format.render_time(((1000) * cljs.core.cst$kw$elapsed.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))))].join(''):null)].join('');
 });

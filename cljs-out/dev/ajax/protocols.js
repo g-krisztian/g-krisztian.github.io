@@ -114,6 +114,28 @@ throw cljs.core.missing_protocol("AjaxResponse.-status-text",this$);
 });
 
 /**
+ * Returns all headers as a map.
+ */
+ajax.protocols._get_all_headers = (function ajax$protocols$_get_all_headers(this$){
+if((((!((this$ == null)))) && ((!((this$.ajax$protocols$AjaxResponse$_get_all_headers$arity$1 == null)))))){
+return this$.ajax$protocols$AjaxResponse$_get_all_headers$arity$1(this$);
+} else {
+var x__4433__auto__ = (((this$ == null))?null:this$);
+var m__4434__auto__ = (ajax.protocols._get_all_headers[goog.typeOf(x__4433__auto__)]);
+if((!((m__4434__auto__ == null)))){
+return (m__4434__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4434__auto__.cljs$core$IFn$_invoke$arity$1(this$) : m__4434__auto__.call(null,this$));
+} else {
+var m__4431__auto__ = (ajax.protocols._get_all_headers["_"]);
+if((!((m__4431__auto__ == null)))){
+return (m__4431__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4431__auto__.cljs$core$IFn$_invoke$arity$1(this$) : m__4431__auto__.call(null,this$));
+} else {
+throw cljs.core.missing_protocol("AjaxResponse.-get-all-headers",this$);
+}
+}
+}
+});
+
+/**
  * Returns the response body as a string or as type specified in response-format such as a blob or arraybuffer.
  */
 ajax.protocols._body = (function ajax$protocols$_body(this$){
@@ -392,6 +414,12 @@ ajax.protocols.Response.prototype.ajax$protocols$AjaxResponse$_status_text$arity
 var self__ = this;
 var this$__$1 = this;
 return cljs.core.cst$kw$status_DASH_text.cljs$core$IFn$_invoke$arity$1(this$__$1);
+});
+
+ajax.protocols.Response.prototype.ajax$protocols$AjaxResponse$_get_all_headers$arity$1 = (function (this$){
+var self__ = this;
+var this$__$1 = this;
+return cljs.core.cst$kw$headers.cljs$core$IFn$_invoke$arity$1(this$__$1);
 });
 
 ajax.protocols.Response.prototype.ajax$protocols$AjaxResponse$_get_response_header$arity$2 = (function (this$,header){
