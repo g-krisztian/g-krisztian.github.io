@@ -29,6 +29,9 @@ pomodoro.cookie_storage.set_unit(m);
 
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$unit,m], null));
 });
+pomodoro.action.set_ready = (function pomodoro$action$set_ready(state,ready){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$ready,ready);
+});
 pomodoro.action.start_button_on_click = (function pomodoro$action$start_button_on_click(state){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$start_DASH_time,(new Date()).getTime(),cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$paused,false,cljs.core.cst$kw$resume,true,cljs.core.cst$kw$active,true,cljs.core.cst$kw$stop,false,cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(cljs.core.deref(state)),cljs.core.cst$kw$key,(function (){var fexpr__14882 = (function (){var G__14884 = cljs.core.cst$kw$get_DASH_key;
 var fexpr__14883 = cljs.core.deref(state);
@@ -111,9 +114,13 @@ return null;
 return pomodoro.action.run_plan(state);
 }
 });
-pomodoro.action.dict = (function pomodoro$action$dict(state,k){
-return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(cljs.core.deref(state),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$dictionary,k], null));
-});
-pomodoro.action.set_title = (function pomodoro$action$set_title(state){
-return document.title = ["Pompdoro - ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.action.dict(state,cljs.core.cst$kw$view.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state))))," ",(cljs.core.truth_(cljs.core.cst$kw$active.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))?["| ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$task_DASH_name.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state))),": ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.time_format.render_time(((1000) * cljs.core.cst$kw$elapsed.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state)))))].join(''):null)].join('');
+pomodoro.action.run_next_item = (function pomodoro$action$run_next_item(state){
+var plan = cljs.core.cst$kw$remain_DASH_plan.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));
+pomodoro.action.add_to_history(state);
+
+if(cljs.core.empty_QMARK_(plan)){
+return pomodoro.action.reset_task(state);
+} else {
+return pomodoro.action.run_plan(state);
+}
 });
