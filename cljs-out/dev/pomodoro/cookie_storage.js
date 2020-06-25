@@ -66,6 +66,12 @@ return pomodoro.cookie_storage.get_by_key(cljs.core.cst$kw$history);
 pomodoro.cookie_storage.set_history = (function pomodoro$cookie_storage$set_history(h){
 return pomodoro.cookie_storage.set_by_key(cljs.core.cst$kw$history,h);
 });
+pomodoro.cookie_storage.get_language = (function pomodoro$cookie_storage$get_language(){
+return pomodoro.cookie_storage.get_by_key(cljs.core.cst$kw$language);
+});
+pomodoro.cookie_storage.set_language = (function pomodoro$cookie_storage$set_language(v){
+return pomodoro.cookie_storage.set_by_key(cljs.core.cst$kw$language,v);
+});
 pomodoro.cookie_storage.delete_history = (function pomodoro$cookie_storage$delete_history(){
 return pomodoro.cookie_storage.delete$(cljs.core.cst$kw$history);
 });

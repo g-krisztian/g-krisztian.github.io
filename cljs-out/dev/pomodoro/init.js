@@ -36,7 +36,14 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 });
 
 pomodoro.init.init.cljs$core$IFn$_invoke$arity$2 = (function (state,storage){
-return pomodoro.init.init.cljs$core$IFn$_invoke$arity$3(state,storage,pomodoro.init.browser_language());
+var language = (function (){var or__4131__auto__ = pomodoro.cookie_storage.get_language();
+if(cljs.core.truth_(or__4131__auto__)){
+return or__4131__auto__;
+} else {
+return pomodoro.init.browser_language();
+}
+})();
+return pomodoro.init.init.cljs$core$IFn$_invoke$arity$3(state,storage,language);
 });
 
 pomodoro.init.init.cljs$core$IFn$_invoke$arity$3 = (function (state,storage,language){
