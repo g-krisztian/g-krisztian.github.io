@@ -11,7 +11,7 @@ goog.require('reagent.core');
 goog.require('pomodoro.dictionary');
 if((typeof pomodoro !== 'undefined') && (typeof pomodoro.core !== 'undefined') && (typeof pomodoro.core.app_state !== 'undefined')){
 } else {
-pomodoro.core.app_state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$get_DASH_key,pomodoro.cookie_storage.get_key,cljs.core.cst$kw$length,(25),cljs.core.cst$kw$ready,false,cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$task_DASH_name,"Default",cljs.core.cst$kw$now,(new Date()).getTime(),cljs.core.cst$kw$view,cljs.core.cst$kw$single_DASH_run,cljs.core.cst$kw$unit,(function (){var or__4131__auto__ = pomodoro.cookie_storage.get_unit();
+pomodoro.core.app_state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 7, [cljs.core.cst$kw$length,(25),cljs.core.cst$kw$ready,false,cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$task_DASH_name,"Default",cljs.core.cst$kw$now,(new Date()).getTime(),cljs.core.cst$kw$view,cljs.core.cst$kw$single_DASH_run,cljs.core.cst$kw$unit,(function (){var or__4131__auto__ = pomodoro.cookie_storage.get_unit();
 if(cljs.core.truth_(or__4131__auto__)){
 return or__4131__auto__;
 } else {

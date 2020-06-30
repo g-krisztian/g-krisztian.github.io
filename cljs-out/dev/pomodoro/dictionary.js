@@ -12,8 +12,8 @@ return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,
 pomodoro.dictionary.get_dictionary = (function pomodoro$dictionary$get_dictionary(state,language){
 pomodoro.cookie_storage.set_language(language);
 
-return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic(["/dictionary_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(language),".edn"].join(''),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$handler,(function (p1__14887_SHARP_){
-return pomodoro.dictionary.load_dictionary(state,p1__14887_SHARP_);
+return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic(["/dictionary_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(language),".edn"].join(''),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$handler,(function (p1__14872_SHARP_){
+return pomodoro.dictionary.load_dictionary(state,p1__14872_SHARP_);
 }),cljs.core.cst$kw$error_DASH_handler,(function (){
 return (pomodoro.dictionary.get_dictionary.cljs$core$IFn$_invoke$arity$2 ? pomodoro.dictionary.get_dictionary.cljs$core$IFn$_invoke$arity$2(state,"en") : pomodoro.dictionary.get_dictionary.call(null,state,"en"));
 })], null)], 0));
@@ -23,15 +23,15 @@ var languages = cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(response);
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$dictionaries,languages);
 });
 pomodoro.dictionary.get_dictionaries = (function pomodoro$dictionary$get_dictionaries(state){
-return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic("/dictionaries.edn",cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$handler,(function (p1__14888_SHARP_){
-return pomodoro.dictionary.load_dictionaries(state,p1__14888_SHARP_);
+return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic("/dictionaries.edn",cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$handler,(function (p1__14873_SHARP_){
+return pomodoro.dictionary.load_dictionaries(state,p1__14873_SHARP_);
 }),cljs.core.cst$kw$error_DASH_handler,(function (){
 return alert("Can't load any language files.\nTry again later!");
 })], null)], 0));
 });
 pomodoro.dictionary.span = (function pomodoro$dictionary$span(var_args){
-var G__14890 = arguments.length;
-switch (G__14890) {
+var G__14875 = arguments.length;
+switch (G__14875) {
 case 2:
 return pomodoro.dictionary.span.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -74,8 +74,8 @@ pomodoro.dictionary.set_text(text);
 return pomodoro.dictionary.get_text_in_pixels();
 }));
 pomodoro.dictionary.get_text = (function pomodoro$dictionary$get_text(var_args){
-var G__14893 = arguments.length;
-switch (G__14893) {
+var G__14878 = arguments.length;
+switch (G__14878) {
 case 2:
 return pomodoro.dictionary.get_text.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -107,11 +107,11 @@ return or__4131__auto__;
 return long_value;
 }
 }
-}catch (e14894){if((e14894 instanceof Object)){
-var e = e14894;
+}catch (e14879){if((e14879 instanceof Object)){
+var e = e14879;
 return long_value;
 } else {
-throw e14894;
+throw e14879;
 
 }
 }});

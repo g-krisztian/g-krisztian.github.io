@@ -14,12 +14,7 @@ return cljs.core.cst$kw$length.cljs$core$IFn$_invoke$arity$1(task);
 });
 pomodoro.action.new_plan = (function pomodoro$action$new_plan(state){
 var task = cljs.core.select_keys(cljs.core.deref(state),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$task_DASH_name,cljs.core.cst$kw$length,cljs.core.cst$kw$unit], null));
-return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([task,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$key,["plan_",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var fexpr__14877 = (function (){var G__14879 = cljs.core.cst$kw$get_DASH_key;
-var fexpr__14878 = cljs.core.deref(state);
-return (fexpr__14878.cljs$core$IFn$_invoke$arity$1 ? fexpr__14878.cljs$core$IFn$_invoke$arity$1(G__14879) : fexpr__14878.call(null,G__14879));
-})();
-return (fexpr__14877.cljs$core$IFn$_invoke$arity$0 ? fexpr__14877.cljs$core$IFn$_invoke$arity$0() : fexpr__14877.call(null));
-})())].join(''),cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(task)], null)], 0));
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([task,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$key,["plan_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(pomodoro.cookie_storage.get_key())].join(''),cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(task)], null)], 0));
 });
 pomodoro.action.swap_value = (function pomodoro$action$swap_value(state,key,e){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,cljs.core.PersistentArrayMap.createAsIfByAssoc([key,e.target.value]));
@@ -33,12 +28,7 @@ pomodoro.action.set_ready = (function pomodoro$action$set_ready(state,ready){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$ready,ready);
 });
 pomodoro.action.start_button_on_click = (function pomodoro$action$start_button_on_click(state){
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$start_DASH_time,(new Date()).getTime(),cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$paused,false,cljs.core.cst$kw$resume,true,cljs.core.cst$kw$active,true,cljs.core.cst$kw$stop,false,cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(cljs.core.deref(state)),cljs.core.cst$kw$key,(function (){var fexpr__14882 = (function (){var G__14884 = cljs.core.cst$kw$get_DASH_key;
-var fexpr__14883 = cljs.core.deref(state);
-return (fexpr__14883.cljs$core$IFn$_invoke$arity$1 ? fexpr__14883.cljs$core$IFn$_invoke$arity$1(G__14884) : fexpr__14883.call(null,G__14884));
-})();
-return (fexpr__14882.cljs$core$IFn$_invoke$arity$0 ? fexpr__14882.cljs$core$IFn$_invoke$arity$0() : fexpr__14882.call(null));
-})()], null));
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state,cljs.core.merge,new cljs.core.PersistentArrayMap(null, 8, [cljs.core.cst$kw$start_DASH_time,(new Date()).getTime(),cljs.core.cst$kw$elapsed,(0),cljs.core.cst$kw$paused,false,cljs.core.cst$kw$resume,true,cljs.core.cst$kw$active,true,cljs.core.cst$kw$stop,false,cljs.core.cst$kw$length_DASH_in_DASH_seconds,pomodoro.action.get_task_in_seconds(cljs.core.deref(state)),cljs.core.cst$kw$key,pomodoro.cookie_storage.get_key()], null));
 });
 pomodoro.action.run_plan = (function pomodoro$action$run_plan(state){
 var batch = cljs.core.cst$kw$remain_DASH_plan.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(state));

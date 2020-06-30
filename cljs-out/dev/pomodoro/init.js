@@ -19,8 +19,8 @@ pomodoro.init.change_width = (function pomodoro$init$change_width(state){
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(state,cljs.core.assoc,cljs.core.cst$kw$width,window.innerWidth);
 });
 pomodoro.init.init = (function pomodoro$init$init(var_args){
-var G__15039 = arguments.length;
-switch (G__15039) {
+var G__15004 = arguments.length;
+switch (G__15004) {
 case 2:
 return pomodoro.init.init.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
